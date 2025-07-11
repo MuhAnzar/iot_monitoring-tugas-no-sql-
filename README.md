@@ -273,27 +273,4 @@ def health_check():
     })
 ```
 
-## 🤝 Contributing
 
-1. Fork repository
-2. Buat feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push ke branch (`git push origin feature/AmazingFeature`)
-5. Buat Pull Request
-
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-## 📞 Support
-
-Untuk pertanyaan atau dukungan:
-- Email: support@example.com
-- Issues: [GitHub Issues](https://github.com/your-repo/issues)
-
----
-
-**Dibuat dengan ❤️ untuk studi kasus NoSQL Database** 
-=======
-# iot_monitoring-tugas-no-sql-
->>>>>>> 385f40e3ab379447816f160bb0b363cf06cae463
