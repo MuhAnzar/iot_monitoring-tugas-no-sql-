@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Sistem Pemantauan Lingkungan IoT dengan MongoDB
 
 ## 📋 Deskripsi
@@ -293,3 +294,6 @@ Untuk pertanyaan atau dukungan:
 ---
 
 **Dibuat dengan ❤️ untuk studi kasus NoSQL Database** 
+=======
+# iot_monitoring-tugas-no-sql-
+>>>>>>> 385f40e3ab379447816f160bb0b363cf06cae463
