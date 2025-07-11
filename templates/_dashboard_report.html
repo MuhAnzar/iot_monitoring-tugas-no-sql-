@@ -1,0 +1,18 @@
+<div id="laporanSection" class="container mt-5" style="display:none;">
+  <div class="card shadow border-0">
+    <div class="card-header bg-white border-0">
+      <div class="laporan-title">
+        <i class="fas fa-file-alt fa-2x"></i>
+        Laporan Sensor Perangkat
+      </div>
+    </div>
+    <div class="card-body">
+      <div id="laporanDeviceInfo" class="mb-3"></div>
+      <div id="laporanContent"></div>
+      <div class="d-flex justify-content-end gap-2">
+        <button class="btn btn-secondary btn-action" onclick="closeLaporan()"><i class="fas fa-times"></i> Tutup Laporan</button>
+        <button class="btn btn-success btn-action" onclick="downloadReportCSV()"><i class="fas fa-download"></i> Unduh CSV</button>
+      </div>
+    </div>
+  </div>
+</div> 

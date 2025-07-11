@@ -1,0 +1,110 @@
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-transparent">
+                <h5><i class="fas fa-table"></i> Pembacaan Terbaru</h5>
+            </div>
+            <div class="card-body">
+                <div class="d-flex flex-wrap gap-2 mb-2 align-items-end">
+                    <div class="row mb-3">
+                        <div class="col-md-3">
+                            <input type="date" class="form-control" id="filterStart" placeholder="Tanggal Mulai">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="date" class="form-control" id="filterEnd" placeholder="Tanggal Akhir">
+                        </div>
+                        <div class="col-md-3">
+                            <input type="number" class="form-control" id="filterThreshold" placeholder="Ambang Batas (opsional)">
+                        </div>
+                        <div class="col-md-3">
+                            <select class="form-control" id="filterStatus">
+                                <option value="">Semua Status</option>
+                                <option value="Normal">Normal</option>
+                                <option value="Hangat">Hangat</option>
+                                <option value="Panas">Panas</option>
+                                <option value="Tinggi">Tinggi</option>
+                                <option value="Berbahaya">Berbahaya</option>
+                                <option value="Ekstrem">Ekstrem</option>
+                                <option value="Tinggi/Rendah">Tinggi/Rendah</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <button class="btn btn-primary w-100" onclick="applyAdvancedFilter()">Terapkan Filter</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="filterAlertBox"></div>
+                <div class="mb-3">
+                    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#reportModal">
+                        <i class="fas fa-file-alt"></i> Buat Laporan
+                    </button>
+                </div>
+                <div id="reportResultBox" class="mt-3"></div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="sortable" data-field="device_id">Perangkat</th>
+                                <th class="sortable" data-field="sensor_id">Sensor</th>
+                                <th class="sortable" data-field="sensor_type">Tipe</th>
+                                <th class="sortable" data-field="value">Nilai</th>
+                                <th class="sortable" data-field="timestamp">Waktu</th>
+                                <th class="sortable" data-field="status">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="readingsTable">
+                            <tr>
+                                <td colspan="6" class="text-center">
+                                    <i class="fas fa-spinner fa-spin"></i> Memuat data...
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="d-flex justify-content-between align-items-center mt-2">
+                        <button class="btn btn-sm btn-outline-primary" id="prevPageBtn">&laquo; Sebelumnya</button>
+                        <span id="paginationInfo"></span>
+                        <button class="btn btn-sm btn-outline-primary" id="nextPageBtn">Berikutnya &raquo;</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Laporan -->
+<div class="modal fade" id="reportModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Buat Laporan Sensor</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-2">
+          <label>Perangkat</label>
+          <select class="form-control" id="reportDevice"></select>
+        </div>
+        <div class="mb-2">
+          <label>Sensor</label>
+          <select class="form-control" id="reportSensor"></select>
+        </div>
+        <div class="mb-2">
+          <label>Tanggal Mulai</label>
+          <input type="date" class="form-control" id="reportStart">
+        </div>
+        <div class="mb-2">
+          <label>Tanggal Akhir</label>
+          <input type="date" class="form-control" id="reportEnd">
+        </div>
+        <div class="mb-2">
+          <label>Ambang Batas (opsional)</label>
+          <input type="number" class="form-control" id="reportThreshold">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="generateReport()">Lihat Laporan</button>
+        <button class="btn btn-outline-secondary" onclick="downloadReportCSV()">Unduh CSV</button>
+      </div>
+    </div>
+  </div>
+</div> 
